@@ -53,10 +53,10 @@ ggplot(diamonds.sample)+geom_point(mapping = aes(x=carat, y= cut,size=price,colo
 
 # Draw a line plot (with line geometry) for `diamonds.sample`. The x-position should be mapped to
 # carat, y-position to price, and color to carat.
-ggplot(diamonds.sample)+geom_line(mapping=aes(x=carat, y=price, color=carat))
+ggplot(diamonds.sample)+geom_line(mapping=aes(x=carat, y=price, color=cut))
 
 # That's kind of messy. Try using `smooth` geometry instead.
-ggplot(diamonds.sample,aes(carat,price, color=carat))+geom_smooth(method = "lm")
+ggplot(diamonds.sample)+geom_smooth(aes(carat,price,color=cut))
 
 # Draw a plot with bar geometry (a bar chart), mapping the diamond's `cut` to the x-axis
 ggplot(diamonds.sample)+geom_bar(mapping = aes(cut))
